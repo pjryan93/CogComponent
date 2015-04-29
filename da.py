@@ -216,7 +216,7 @@ class dA(object):
 
         """
         return self.theano_rng.binomial(size=input.shape, n=1,
-                                        p=0.05,
+                                        p=1 - corruption_level,
                                         dtype=theano.config.floatX) * input
 
     def get_hidden_values(self, input):
