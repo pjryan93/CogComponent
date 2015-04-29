@@ -199,14 +199,14 @@ def prac():
     bigData = cPickle.load(h)
     x0 = bigData['x']
     print len(x0)
-    y0 = bigData['y']
+    y0 = bigData['y'].eval()
     d0 = shared_dataset2((x0,y0))
     h.close()
 
     sixDict= cPickle.load(f)
     f.close()
     x_data = sixDict['x']
-    y_data = sixDict['y']
+    y_data = sixDict['y'].eval()
 
 
     y_data = asarray(y_data)
@@ -217,7 +217,7 @@ def prac():
     #three = getSongsSet(92)
     pDict= cPickle.load(g)
     x1 = pDict['x']
-    y1 = pDict['y']
+    y1 = pDict['y'].eval()
     dset = shared_dataset2((x1,y1))
     sets.append(six)
     sets.append(dset)
