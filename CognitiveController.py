@@ -27,7 +27,7 @@ def train(datasets):
             #hidden_layers_sizes=[2300, 2300, 2300,2300,2300],
             #hidden_layers_sizes=[2600, 2500, 2200,2200,2200],
             #hidden_layers_sizes=[2700,2700,2700,2700],
-            hidden_layers_sizes=[1500,1500,1500],
+            hidden_layers_sizes=[1000,1000,1000],
             n_outs=14
     )
     n_train_batches = train_set_x.get_value(borrow=True).shape[0]
@@ -38,7 +38,7 @@ def train(datasets):
     print '... pre-training the model'
     start_time = time.clock()
     corruption_levels = [.1,.2,.3]
-    pretraining_epochs = 7
+    pretraining_epochs = 9
     pretrain_lr = 0.1
     for i in xrange(sda.n_layers):
             # go through pretraining epochs
@@ -193,12 +193,12 @@ def prac():
     return pickleDict
     """
     h = file('fftData15.dat','rb')
-    f = file('fftData13.dat','rb')
+    f = file('fftData13.dat','rb')/100
     g = file('abbeyRoadFFT2.dat','rb')
 
     bigData = cPickle.load(h)
     print bigData
-    x0 = bigData['x']
+    x0 = bigData['x']/10
     print len(x0)
     y0 = bigData['y'].eval()
     d0 = shared_dataset2((x0,y0))
@@ -206,7 +206,7 @@ def prac():
 
     sixDict= cPickle.load(f)
     f.close()
-    x_data = sixDict['x']
+    x_data = sixDict['x']/10
     y_data = sixDict['y'].eval()
 
 
@@ -217,7 +217,7 @@ def prac():
     sets.append(d0)    #two = getSongsSet(91)
     #three = getSongsSet(92)
     pDict= cPickle.load(g)
-    x1 = pDict['x']
+    x1 = pDict['x']/10
     y1 = pDict['y'].eval()
     dset = shared_dataset2((x1,y1))
     sets.append(six)
