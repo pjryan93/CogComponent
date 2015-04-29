@@ -39,7 +39,7 @@ def train(datasets):
     start_time = time.clock()
     corruption_levels = [.1,.2,.3]
     pretraining_epochs = 10
-    pretrain_lr = 0.01
+    pretrain_lr = 0.001
     for i in xrange(sda.n_layers):
             # go through pretraining epochs
             for epoch in xrange(pretraining_epochs):
