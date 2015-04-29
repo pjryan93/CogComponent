@@ -192,7 +192,7 @@ def prac():
     print len(six)
     return pickleDict
     """
-    h = file('fullabbeyAndMore.dat','rb')
+    h = file('abbeyAndBe.dat','rb')
     f = file('biggestDataSet.dat','rb')
     g = file('fftData15.dat','rb')
 
