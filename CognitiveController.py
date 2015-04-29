@@ -32,7 +32,7 @@ def train(datasets):
     )
     n_train_batches = train_set_x.get_value(borrow=True).shape[0]
     print n_train_batches
-    batch_size = 20
+    batch_size = 2
     print '... getting the pretraining functions'
     pretraining_fns = sda.pretraining_functions(train_set_x=train_set_x,batch_size=batch_size)
     print '... pre-training the model'
