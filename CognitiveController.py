@@ -27,7 +27,7 @@ def train(datasets):
             #hidden_layers_sizes=[2300, 2300, 2300,2300,2300],
             #hidden_layers_sizes=[2600, 2500, 2200,2200,2200],
             #hidden_layers_sizes=[2700,2700,2700,2700],
-            hidden_layers_sizes=[1000,1000,1000,1000],
+            hidden_layers_sizes=[1500,1500,1500],
             n_outs=14
     )
     n_train_batches = train_set_x.get_value(borrow=True).shape[0]
@@ -38,7 +38,7 @@ def train(datasets):
     print '... pre-training the model'
     start_time = time.clock()
     corruption_levels = [.1,.2,.3,.4]
-    pretraining_epochs = 10
+    pretraining_epochs = 3
     pretrain_lr = 0.001
     for i in xrange(sda.n_layers):
             # go through pretraining epochs
@@ -192,12 +192,12 @@ def prac():
     print len(six)
     return pickleDict
     """
-    h = file('trainingSet.dat','rb')
-    f = file('biggestDataSet.dat','rb')
-    g = file('biggestDataSet.dat','rb')
+    h = file('fftData15.dat','rb')
+    f = file('fftData15.dat','rb')
+    g = file('fftData15.dat','rb')
 
     bigData = cPickle.load(h)
-    x0 = bigData['x']/10
+    x0 = bigData['x']
     print len(x0)
     y0 = bigData['y']
     d0 = shared_dataset2((x0,y0))
@@ -205,7 +205,7 @@ def prac():
 
     sixDict= cPickle.load(f)
     f.close()
-    x_data = sixDict['x']/10
+    x_data = sixDict['x']
     y_data = sixDict['y']
 
 
@@ -216,7 +216,7 @@ def prac():
     sets.append(d0)    #two = getSongsSet(91)
     #three = getSongsSet(92)
     pDict= cPickle.load(g)
-    x1 = pDict['x']/10
+    x1 = pDict['x']
     y1 = pDict['y']
     dset = shared_dataset2((x1,y1))
     sets.append(six)
