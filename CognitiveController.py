@@ -192,9 +192,9 @@ def prac():
     print len(six)
     return pickleDict
     """
-    h = file('fftData15.dat','rb')
-    f = file('fftData15.dat','rb')
-    g = file('fftData15.dat','rb')
+    h = file('fftData13.dat','rb')
+    f = file('fftData13.dat','rb')
+    g = file('fftData13.dat','rb')
 
     bigData = cPickle.load(h)
     print bigData
