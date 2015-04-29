@@ -38,7 +38,7 @@ def train(datasets):
     print '... pre-training the model'
     start_time = time.clock()
     corruption_levels = [.1,.2,.3]
-    pretraining_epochs = 6
+    pretraining_epochs = 7
     pretrain_lr = 0.01
     for i in xrange(sda.n_layers):
             # go through pretraining epochs
@@ -81,7 +81,7 @@ def train(datasets):
 
     done_looping = False
     epoch = 0
-    training_epochs=15,
+    training_epochs=20,
     while (epoch < training_epochs) and (not done_looping):
         epoch = epoch + 1
         for minibatch_index in xrange(n_train_batches):
