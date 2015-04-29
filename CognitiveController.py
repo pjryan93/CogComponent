@@ -197,6 +197,7 @@ def prac():
     g = file('fftData15.dat','rb')
 
     bigData = cPickle.load(h)
+    print bigData
     x0 = bigData['x']
     print len(x0)
     y0 = bigData['y'].eval()
