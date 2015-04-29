@@ -197,7 +197,7 @@ def prac():
     g = file('biggestDataSet.dat','rb')
 
     bigData = cPickle.load(h)
-    x0 = bigData['x']/100
+    x0 = bigData['x']/10
     print len(x0)
     y0 = bigData['y']
     d0 = shared_dataset2((x0,y0))
@@ -205,7 +205,7 @@ def prac():
 
     sixDict= cPickle.load(f)
     f.close()
-    x_data = sixDict['x']/100
+    x_data = sixDict['x']/10
     y_data = sixDict['y']
 
 
@@ -216,7 +216,7 @@ def prac():
     sets.append(d0)    #two = getSongsSet(91)
     #three = getSongsSet(92)
     pDict= cPickle.load(g)
-    x1 = pDict['x']/100
+    x1 = pDict['x']/10
     y1 = pDict['y']
     dset = shared_dataset2((x1,y1))
     sets.append(six)
