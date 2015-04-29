@@ -27,7 +27,7 @@ def train(datasets):
             #hidden_layers_sizes=[2300, 2300, 2300,2300,2300],
             #hidden_layers_sizes=[2600, 2500, 2200,2200,2200],
             #hidden_layers_sizes=[2700,2700,2700,2700],
-            hidden_layers_sizes=[4000,4000,4000],
+            hidden_layers_sizes=[2000,2000,2000],
             n_outs=14
     )
     n_train_batches = train_set_x.get_value(borrow=True).shape[0]
@@ -39,7 +39,7 @@ def train(datasets):
     start_time = time.clock()
     corruption_levels = [.1,.25,.35]
     pretraining_epochs = 4
-    pretrain_lr = 0.01
+    pretrain_lr = 0.001
     for i in xrange(sda.n_layers):
             # go through pretraining epochs
             for epoch in xrange(pretraining_epochs):
