@@ -39,7 +39,7 @@ def train(datasets):
     start_time = time.clock()
     corruption_levels = [.1,.2,.3]
     pretraining_epochs = 7
-    pretrain_lr = 0.5
+    pretrain_lr = 0.1
     for i in xrange(sda.n_layers):
             # go through pretraining epochs
             for epoch in xrange(pretraining_epochs):
@@ -193,8 +193,8 @@ def prac():
     return pickleDict
     """
     h = file('fftData13.dat','rb')
-    f = file('fftData13.dat','rb')
-    g = file('fftData13.dat','rb')
+    f = file('fftData15.dat','rb')
+    g = file('abbeyRoadFFT2.dat','rb')
 
     bigData = cPickle.load(h)
     print bigData
