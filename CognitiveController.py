@@ -27,7 +27,7 @@ def train(datasets):
             #hidden_layers_sizes=[2300, 2300, 2300,2300,2300],
             #hidden_layers_sizes=[2600, 2500, 2200,2200,2200],
             #hidden_layers_sizes=[2700,2700,2700,2700],
-            hidden_layers_sizes=[6000,6000,6000],
+            hidden_layers_sizes=[7000,7000,7000],
             n_outs=14
     )
     n_train_batches = train_set_x.get_value(borrow=True).shape[0]
@@ -37,8 +37,8 @@ def train(datasets):
     pretraining_fns = sda.pretraining_functions(train_set_x=train_set_x,batch_size=batch_size)
     print '... pre-training the model'
     start_time = time.clock()
-    corruption_levels = [.1,.2,.3]
-    pretraining_epochs = 5
+    corruption_levels = [.1,.25,.35]
+    pretraining_epochs = 4
     pretrain_lr = 0.001
     for i in xrange(sda.n_layers):
             # go through pretraining epochs
@@ -192,9 +192,9 @@ def prac():
     print len(six)
     return pickleDict
     """
-    h = file('abbeyAndBe.dat','rb')
+    h = file('trainingSet.dat','rb')
     f = file('biggestDataSet.dat','rb')
-    g = file('fftData15.dat','rb')
+    g = file('biggestDataSet.dat','rb')
 
     bigData = cPickle.load(h)
     x0 = bigData['x']
