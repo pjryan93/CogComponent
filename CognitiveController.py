@@ -39,7 +39,7 @@ def train(datasets):
     start_time = time.clock()
     corruption_levels = [.1,.25,.35]
     pretraining_epochs = 4
-    pretrain_lr = 0.001
+    pretrain_lr = 0.01
     for i in xrange(sda.n_layers):
             # go through pretraining epochs
             for epoch in xrange(pretraining_epochs):
@@ -197,7 +197,7 @@ def prac():
     g = file('biggestDataSet.dat','rb')
 
     bigData = cPickle.load(h)
-    x0 = bigData['x']
+    x0 = bigData['x']/100
     print len(x0)
     y0 = bigData['y']
     d0 = shared_dataset2((x0,y0))
@@ -205,7 +205,7 @@ def prac():
 
     sixDict= cPickle.load(f)
     f.close()
-    x_data = sixDict['x']
+    x_data = sixDict['x']/100
     y_data = sixDict['y']
 
 
@@ -216,7 +216,7 @@ def prac():
     sets.append(d0)    #two = getSongsSet(91)
     #three = getSongsSet(92)
     pDict= cPickle.load(g)
-    x1 = pDict['x']
+    x1 = pDict['x']/100
     y1 = pDict['y']
     dset = shared_dataset2((x1,y1))
     sets.append(six)
