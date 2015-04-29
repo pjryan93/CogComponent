@@ -32,13 +32,13 @@ def train(datasets):
     )
     n_train_batches = train_set_x.get_value(borrow=True).shape[0]
     print n_train_batches
-    batch_size = 1
+    batch_size = 20
     print '... getting the pretraining functions'
     pretraining_fns = sda.pretraining_functions(train_set_x=train_set_x,batch_size=batch_size)
     print '... pre-training the model'
     start_time = time.clock()
     corruption_levels = [.1,.2,.3]
-    pretraining_epochs = 5
+    pretraining_epochs = 10
     pretrain_lr = 0.01
     for i in xrange(sda.n_layers):
             # go through pretraining epochs
