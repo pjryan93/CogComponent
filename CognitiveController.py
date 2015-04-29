@@ -32,14 +32,14 @@ def train(datasets):
     )
     n_train_batches = train_set_x.get_value(borrow=True).shape[0]
     print n_train_batches
-    batch_size = 2
+    batch_size = 1
     print '... getting the pretraining functions'
     pretraining_fns = sda.pretraining_functions(train_set_x=train_set_x,batch_size=batch_size)
     print '... pre-training the model'
     start_time = time.clock()
     corruption_levels = [.1,.2,.3]
-    pretraining_epochs = 10
-    pretrain_lr = 0.001
+    pretraining_epochs = 5
+    pretrain_lr = 0.0001
     for i in xrange(sda.n_layers):
             # go through pretraining epochs
             for epoch in xrange(pretraining_epochs):
@@ -197,7 +197,7 @@ def prac():
     g = file('fftData15.dat','rb')
 
     bigData = cPickle.load(h)
-    x0 = bigData['x']/10
+    x0 = bigData['x']
     print len(x0)
     y0 = bigData['y']
     d0 = shared_dataset2((x0,y0))
@@ -205,7 +205,7 @@ def prac():
 
     sixDict= cPickle.load(f)
     f.close()
-    x_data = sixDict['x']/10
+    x_data = sixDict['x']
     y_data = sixDict['y']
 
 
@@ -216,7 +216,7 @@ def prac():
     sets.append(d0)    #two = getSongsSet(91)
     #three = getSongsSet(92)
     pDict= cPickle.load(g)
-    x1 = pDict['x']/10
+    x1 = pDict['x']
     y1 = pDict['y'].eval()
     dset = shared_dataset2((x1,y1))
     sets.append(six)
