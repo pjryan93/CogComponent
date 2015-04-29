@@ -193,7 +193,7 @@ def prac():
     return pickleDict
     """
     h = file('fftData15.dat','rb')
-    f = file('fftData13.dat','rb')/100
+    f = file('fftData13.dat','rb')
     g = file('abbeyRoadFFT2.dat','rb')
 
     bigData = cPickle.load(h)
