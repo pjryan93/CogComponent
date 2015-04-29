@@ -37,9 +37,9 @@ def train(datasets):
     pretraining_fns = sda.pretraining_functions(train_set_x=train_set_x,batch_size=batch_size)
     print '... pre-training the model'
     start_time = time.clock()
-    corruption_levels = [.1,.2,.3,.4]
-    pretraining_epochs = 3
-    pretrain_lr = 0.001
+    corruption_levels = [.1,.2,.3]
+    pretraining_epochs = 
+    pretrain_lr = 0.01
     for i in xrange(sda.n_layers):
             # go through pretraining epochs
             for epoch in xrange(pretraining_epochs):
