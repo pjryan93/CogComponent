@@ -27,7 +27,7 @@ def train(datasets):
             #hidden_layers_sizes=[2300, 2300, 2300,2300,2300],
             #hidden_layers_sizes=[2600, 2500, 2200,2200,2200],
             #hidden_layers_sizes=[2700,2700,2700,2700],
-            hidden_layers_sizes=[7000,7000,7000],
+            hidden_layers_sizes=[4000,4000,4000],
             n_outs=14
     )
     n_train_batches = train_set_x.get_value(borrow=True).shape[0]
