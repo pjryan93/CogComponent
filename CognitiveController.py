@@ -27,7 +27,7 @@ def train(datasets):
             #hidden_layers_sizes=[2300, 2300, 2300,2300,2300],
             #hidden_layers_sizes=[2600, 2500, 2200,2200,2200],
             #hidden_layers_sizes=[2700,2700,2700,2700],
-            hidden_layers_sizes=[1600,1600,1600],
+            hidden_layers_sizes=[1200,1200,1200],
             n_outs=14
     )
     n_train_batches = train_set_x.get_value(borrow=True).shape[0]
@@ -38,7 +38,7 @@ def train(datasets):
     print '... pre-training the model'
     start_time = time.clock()
     corruption_levels = [.1,.2,.3]
-    pretraining_epochs = 10
+    pretraining_epochs = 5
     pretrain_lr = 0.1
     for i in xrange(sda.n_layers):
             # go through pretraining epochs
@@ -61,7 +61,7 @@ def train(datasets):
     train_fn, validate_model, test_model  = sda.build_finetune_functions(
             datasets=datasets,
             batch_size=batch_size,
-            learning_rate=0.2
+            learning_rate=0.1
     )
 
     patience = 20 * n_train_batches  # look as this many examples regardless
@@ -192,22 +192,22 @@ def prac():
     print len(six)
     return pickleDict
     """
-    h = file('train.dat','rb')
-    f = file('biggestDataSet.dat','rb')
-    g = file('testingSet.dat','rb')
+    h = file('fftData13.dat','rb')
+    f = file('fftData13.dat','rb')
+    g = file('fftData13.dat','rb')
 
     bigData = cPickle.load(h)
     print bigData
-    x0 = bigData['x']/10
+    x0 = bigData['x']
     print len(x0)
-    y0 = bigData['y']
+    y0 = bigData['y'].eval()
     d0 = shared_dataset2((x0,y0))
     h.close()
 
     sixDict= cPickle.load(f)
     f.close()
-    x_data = sixDict['x']/10
-    y_data = sixDict['y']
+    x_data = sixDict['x']
+    y_data = sixDict['y'].eval()
 
 
     y_data = asarray(y_data)
@@ -217,7 +217,7 @@ def prac():
     sets.append(d0)    #two = getSongsSet(91)
     #three = getSongsSet(92)
     pDict= cPickle.load(g)
-    x1 = pDict['x']/10
+    x1 = pDict['x']
     y1 = pDict['y'].eval()
     dset = shared_dataset2((x1,y1))
     sets.append(six)
