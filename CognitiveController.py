@@ -194,7 +194,7 @@ def prac():
     """
     h = file('trainingSet.dat','rb')
     f = file('fftData13.dat','rb')
-    g = file('abbeyRoadFFT2.dat','rb')
+    g = file('testingSet.dat','rb')
 
     bigData = cPickle.load(h)
     print bigData
