@@ -218,7 +218,7 @@ def prac():
     #three = getSongsSet(92)
     pDict= cPickle.load(g)
     x1 = pDict['x']/10
-    y1 = pDict['y']
+    y1 = pDict['y'].eval()
     dset = shared_dataset2((x1,y1))
     sets.append(six)
     sets.append(dset)
