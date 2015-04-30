@@ -193,7 +193,7 @@ def prac():
     return pickleDict
     """
     h = file('train.dat','rb')
-    f = file('biggetsDataSet.dat','rb')
+    f = file('biggestDataSet.dat','rb')
     g = file('testingSet.dat','rb')
 
     bigData = cPickle.load(h)
