@@ -192,7 +192,7 @@ def prac():
     print len(six)
     return pickleDict
     """
-    h = file('tSet.dat','rb')
+    h = file('trainingSet.dat','rb')
     f = file('validationSet.dat','rb')
     g = file('testingSet.dat','rb')
 
@@ -217,7 +217,7 @@ def prac():
     sets.append(d0)    #two = getSongsSet(91)
     #three = getSongsSet(92)
     pDict= cPickle.load(g)
-    x1 = pDict['x']/10
+    x1 = pDict['x']/
     y1 = pDict['y'].eval()
     dset = shared_dataset2((x1,y1))
     sets.append(six)
