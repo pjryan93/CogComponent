@@ -38,8 +38,8 @@ def train(datasets):
     print '... pre-training the model'
     start_time = time.clock()
     corruption_levels = [.1,.2,.3]
-    pretraining_epochs = 8
-    pretrain_lr = 0.15
+    pretraining_epochs = 50
+    pretrain_lr = 0.1
     for i in xrange(sda.n_layers):
             # go through pretraining epochs
             for epoch in xrange(pretraining_epochs):
@@ -192,7 +192,7 @@ def prac():
     print len(six)
     return pickleDict
     """
-    h = file('tSet.dat','rb')
+    h = file('train.dat','rb')
     f = file('validationSet.dat','rb')
     g = file('testingSet.dat','rb')
 
