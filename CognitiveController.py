@@ -38,7 +38,7 @@ def train(datasets):
     print '... pre-training the model'
     start_time = time.clock()
     corruption_levels = [.1,.2,.3]
-    pretraining_epochs = 10
+    pretraining_epochs = 8
     pretrain_lr = 0.15
     for i in xrange(sda.n_layers):
             # go through pretraining epochs
@@ -64,7 +64,7 @@ def train(datasets):
             learning_rate=0.2
     )
 
-    patience = 10 * n_train_batches  # look as this many examples regardless
+    patience = 50 * n_train_batches  # look as this many examples regardless
     patience_increase = 1.  # wait this much longer when a new best is
                             # found
     improvement_threshold = 0.995  # a relative improvement of this much is
