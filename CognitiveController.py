@@ -192,7 +192,7 @@ def prac():
     print len(six)
     return pickleDict
     """
-    h = file('trainingSet.dat','rb')
+    h = file('tSet.dat','rb')
     f = file('validationSet.dat','rb')
     g = file('testingSet.dat','rb')
 
