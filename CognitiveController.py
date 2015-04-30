@@ -183,7 +183,7 @@ def prac():
     pickleDict['x'] = six[0].eval()
     pickleDict['y'] = six[1]
 
-    cPickle.dump(pickleDict, f, protocol=cPickle.HIGHEST_PROTOCOL)
+    cPickle.dump(pd, file('validationSet.dat','wb'), protocol=cPickle.HIGHEST_PROTOCOL)
     #seven = getSongsSet(96)
     #eight = getSongsSet(97)
     # x_Data_set.extend(five[0])
@@ -193,7 +193,7 @@ def prac():
     return pickleDict
     """
     h = file('trainingSet.dat','rb')
-    f = file('fftData13.dat','rb')
+    f = file('validationSet.dat','rb')
     g = file('testingSet.dat','rb')
 
     bigData = cPickle.load(h)
