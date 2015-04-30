@@ -367,4 +367,4 @@ def loadDict(path):
     return ret
 
 if __name__ == '__main__':
-    t = testing()
+    t = prac()
