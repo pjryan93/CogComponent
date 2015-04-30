@@ -61,7 +61,7 @@ def train(datasets):
     train_fn, validate_model, test_model  = sda.build_finetune_functions(
             datasets=datasets,
             batch_size=batch_size,
-            learning_rate=0.1
+            learning_rate=0.2
     )
 
     patience = 10 * n_train_batches  # look as this many examples regardless
