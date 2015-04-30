@@ -198,7 +198,7 @@ def prac():
 
     bigData = cPickle.load(h)
     print bigData
-    x0 = bigData['x']
+    x0 = bigData['x']/10
     print len(x0)
     y0 = bigData['y']
     d0 = shared_dataset2((x0,y0))
