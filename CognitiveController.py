@@ -207,7 +207,7 @@ def prac():
     sixDict= cPickle.load(f)
     f.close()
     x_data = sixDict['x']/10
-    y_data = sixDict['y'].eval()
+    y_data = sixDict['y']
 
 
     y_data = asarray(y_data)
